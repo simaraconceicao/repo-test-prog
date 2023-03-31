@@ -1,10 +1,12 @@
 const express = require('express')
 const conectaBancoDeDados = require('./db-async')
+const cors = require('cors')
 const router = express.Router()
 const app = express()
 const Mulher = require('./ModelMulher')
 
 conectaBancoDeDados()
+app.use(cors())
 app.use(express.json())
 
 const PORTA = 3333
